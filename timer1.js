@@ -1,10 +1,13 @@
-var timers = process.argv.slice(2)
+var userInput = process.argv.slice(2);
 
-const timer = function(input) {
-setTimeout(() => {
-  process.stdout.write('\x07')
-}, input * 1000);
-
+const timerInput = function(input){
+for (let x = 0; x < input.length; x++) {
+  setTimeout(() => {
+    process.stdout.write('\x07')
+  }, input[x] * 1000)}
+  if (input.length === 0) {
+    clearTimeout
+  }
 }
 
-timer(timers)
+timerInput(userInput)
